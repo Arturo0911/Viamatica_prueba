@@ -6,13 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "tbl_persona")
@@ -33,12 +31,27 @@ public class Person {
     @Getter @Setter
     @Column(name = "fec_nacimiento")
     @NotNull @NotBlank @NotEmpty
-    private String personBirth;
+    private Date personBirth;
+
 
     /*
      * Code sector
      * code zone
      */
+
+    /*
+    * @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    * */
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_zona_fk", referencedColumnName = "cod_zona")
+    @Getter @Setter
+    private Zone zone;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_sector_fk", referencedColumnName = "cod_sector")
+    @Getter @Setter
+    private Sector sector;
 
 
     @Getter @Setter

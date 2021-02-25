@@ -6,13 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tbl_sector")
@@ -29,6 +28,19 @@ public class Sector {
     @Column(name = "des_sector", length = 200)
     @NotEmpty @NotNull @NotBlank
     private String sectorDescription;
+
+
+    /*
+     * Constrain references by Person and Zone table
+     */
+
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "sector")
+    @Getter @Setter
+    private Person person;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sector")
+    @Getter @Setter
+    private Set<Zone> zones = new HashSet<>();;
 
 
 }
