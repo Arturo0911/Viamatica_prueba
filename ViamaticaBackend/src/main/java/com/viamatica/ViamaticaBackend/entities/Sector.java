@@ -31,18 +31,4 @@ public class Sector {
     private String sectorDescription;
 
 
-    /*
-     * Constrain references by Person and Zone table
-     */
-
-    /*@OneToOne(fetch = FetchType.LAZY,mappedBy = "sector")
-    @Getter @Setter
-    private Person person;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cod_zona", referencedColumnName = "sectorCode")
-    @Getter @Setter
-    private List<Zone> zones;*/
-
-
 }

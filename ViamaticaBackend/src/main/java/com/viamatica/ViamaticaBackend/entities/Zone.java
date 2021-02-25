@@ -29,13 +29,7 @@ public class Zone {
     private String zoneDescription;
 
 
-    /*
-     * Constrain references by Person and Sector table
-     */
 
-    /*@OneToOne(mappedBy = "zone")
-    @Getter @Setter
-    private Person person;*/
 
 
     @OneToOne(cascade = CascadeType.ALL)

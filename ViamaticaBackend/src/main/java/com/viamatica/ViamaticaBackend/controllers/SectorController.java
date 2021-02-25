@@ -3,14 +3,14 @@ package com.viamatica.ViamaticaBackend.controllers;
 import com.viamatica.ViamaticaBackend.daos.SectorDao;
 import com.viamatica.ViamaticaBackend.entities.Sector;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.List;
 
+
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/sector")
 public class SectorController {
@@ -18,7 +18,7 @@ public class SectorController {
     @Autowired
     SectorDao sectorDao;
 
-
+    @CrossOrigin("http://localhost:3000/Sector")
     @RequestMapping(value = "/getSectors", method = RequestMethod.GET)
     public List<Sector> getSectors(){
         return sectorDao.findAll();
