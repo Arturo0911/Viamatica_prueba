@@ -1,6 +1,7 @@
 package com.viamatica.ViamaticaBackend.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,7 @@ public class Person {
 
     @Getter @Setter
     @Column(name = "fec_nacimiento")
-    @NotNull @NotBlank @NotEmpty
+    @JsonFormat(pattern="dd/MM/yy")
     private Date personBirth;
 
 
@@ -39,24 +40,19 @@ public class Person {
      * code zone
      */
 
-    /*
-    * @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    * */
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cod_zona_fk", referencedColumnName = "cod_zona")
+    @JoinColumn(name = "cod_zona", referencedColumnName = "cod_zona")
     @Getter @Setter
     private Zone zone;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cod_sector_fk", referencedColumnName = "cod_sector")
+    @JoinColumn(name = "cod_sector", referencedColumnName = "cod_sector")
     @Getter @Setter
     private Sector sector;
 
 
     @Getter @Setter
     @Column(name = "Sueldo")
-    @NotNull @NotBlank @NotEmpty
     private float personSalary;
 
 

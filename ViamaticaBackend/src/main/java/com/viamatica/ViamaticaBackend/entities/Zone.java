@@ -28,17 +28,18 @@ public class Zone {
     @NotBlank @NotNull @NotEmpty
     private String zoneDescription;
 
+
     /*
      * Constrain references by Person and Sector table
      */
 
-    @OneToOne(mappedBy = "zone")
+    /*@OneToOne(mappedBy = "zone")
     @Getter @Setter
-    private Person person;
+    private Person person;*/
 
 
-    @ManyToOne
-    @JoinColumn(name = "cod_sector", nullable = false)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_sector", referencedColumnName = "cod_sector")
     @Getter @Setter
     private Sector sector;
 

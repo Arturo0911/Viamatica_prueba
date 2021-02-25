@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,13 +35,14 @@ public class Sector {
      * Constrain references by Person and Zone table
      */
 
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "sector")
+    /*@OneToOne(fetch = FetchType.LAZY,mappedBy = "sector")
     @Getter @Setter
     private Person person;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "sector")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cod_zona", referencedColumnName = "sectorCode")
     @Getter @Setter
-    private Set<Zone> zones = new HashSet<>();;
+    private List<Zone> zones;*/
 
 
 }
