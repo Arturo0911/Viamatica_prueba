@@ -6,8 +6,13 @@ import java.util.List;
 
 public interface PesonaService {
 
-    List<Person> findPersonByAge();
+    //List<Person> findPersonByAge();
     List<Person> findAllPersons();
+    void updatePerson(Person person);
+    String deletePersonByCode(String personCode);
+
+    Person savePerson(Person person);
+
 
 
 }

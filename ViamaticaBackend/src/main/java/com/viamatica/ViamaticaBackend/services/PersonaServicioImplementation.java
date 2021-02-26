@@ -15,13 +15,29 @@ public class PersonaServicioImplementation implements PesonaService {
     PersonDao personDao;
 
 
-    @Override
+    /*@Override
     public List<Person> findPersonByAge() {
         return personDao.findPersonOrderByAge();
-    }
+    }*/
 
     @Override
     public List<Person> findAllPersons() {
         return personDao.findAll();
+    }
+
+    @Override
+    public void updatePerson(Person person) {
+        personDao.save(person);
+    }
+
+    @Override
+    public String deletePersonByCode(String personCode) {
+        personDao.deleteById(personCode);
+        return "Person deleted";
+    }
+
+    @Override
+    public Person savePerson(Person person) {
+        return personDao.save(person);
     }
 }
