@@ -16,18 +16,23 @@
 
       </tbody>
     </table>
-    <!--<div v-bind:key="todo.id" v-for="todo in todos">
-      <h3>{{ todo.sectorCode }}</h3>
-      <p>{{ todo.sectorDescription }}</p>
-    </div>-->
   </div>
 </template>
 
 <script>
 export default {
-  name: "Sector",
-  props: ["todos"],
-};
-</script>
+  name: 'SectorValues',
+  props: ["todos"]
+}
+</script>>
 
-<style scoped></style>
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 18px;  
+}
+</style>
