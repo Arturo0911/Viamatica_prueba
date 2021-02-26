@@ -183,7 +183,6 @@ export default {
         .then((data) => console.log(data));
     }
     ,
-    getPerson() {},
     loadSectores(){
       fetch('http://localhost:8082/sector/getSectors')
     },

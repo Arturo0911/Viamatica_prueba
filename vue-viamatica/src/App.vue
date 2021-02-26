@@ -12,20 +12,6 @@
             <b-nav-item :to="{name: 'Sector'}">Sectores</b-nav-item>
             <b-nav-item :to="{name: 'Zona'}">Zona</b-nav-item>
           </b-navbar-nav>
-
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="mr-auto">
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template #button-content>
-                <em>Persona</em>
-              </template>
-              <b-dropdown-item href="#">Crear persona</b-dropdown-item>
-              <b-dropdown-item href="#">Ver persona</b-dropdown-item>
-              <b-dropdown-item href="#">Eliminar persona</b-dropdown-item>
-              <b-dropdown-item href="#">Actualizar persona</b-dropdown-item>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
         </b-collapse>
       </b-container>
     </b-navbar>
